@@ -33,11 +33,44 @@ server.get('/api/zoos', (req, res) => {
   })
 });
 
+server.get('/api/zoos/:id', (req, res) => {
+  zoos.findById(req.params.id)
+  .then(animal => {
+    if (!animal) {
+      res.status(404).json({
+        errorMessage: 'animal not found!'
+      })
+    }
+    else {
+      res.status(200).json(animal)
+    }
+  })
+  .catch(error => {
+    res.status(500).json(error)
+  })
+});
+
 server.post('/api/zoos', (req, res) => {
   console.log(req.body)
   zoos.add(req.body)
   .then(animal => {
     res.status(201).json(animal)
+  })
+  .catch(error => {
+    res.status(500).json(error)
+  })
+});
+
+server.delete('/api/zoos/:id', (req, res) => {
+  zoos.remove(req.params.id)
+  .then(deleted => {
+    if (deleted > 0) {
+      res.status(200).json({message: `${deleted} record(s) deleted`})
+    } else {
+      res.status(404).json({
+        message: 'could not find animal with specified id'
+      })
+    }
   })
   .catch(error => {
     res.status(500).json(error)

@@ -32,7 +32,8 @@ function findById(id) {
 }
 
 function add(body) {
-    return db('zoos').insert(body, 'id')
+    return db('zoos')
+    .insert(body, 'id')
 }
   
   function update(id, changes) {
@@ -40,5 +41,7 @@ function add(body) {
   }
   
   function remove(id) {
-    return null;
+    return db('zoos')
+    .where({ id})
+    .del()
   }
