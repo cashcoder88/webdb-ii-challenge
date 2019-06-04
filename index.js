@@ -4,18 +4,18 @@ const zoos = require('./zoos-model.js')
 const server = express();
 
 
-const knex = require('knex')
+// const knex = require('knex')
 
 
-const knexConfig = {
-    client: 'sqlite3',
-    connection: {
-        filename: './data/lambda.db3'
-    },
-    useNullAsDefault: true
-}
+// const knexConfig = {
+//     client: 'sqlite3',
+//     connection: {
+//         filename: './data/lambda.db3'
+//     },
+//     useNullAsDefault: true
+// }
 
-const db = knex(knexConfig);
+// const db = knex(knexConfig);
 
 server.use(express.json());
 server.use(helmet());
