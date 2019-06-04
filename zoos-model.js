@@ -31,9 +31,9 @@ function findById(id) {
         .first();
 }
 
-function add(role) {
-    return null;
-  }
+function add(body) {
+    return db('zoos').insert(body, 'id')
+}
   
   function update(id, changes) {
     return null;
