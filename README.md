@@ -16,7 +16,7 @@ Follow these steps for completing your project.
 
 - [x] Submit a Pull-Request to merge `<firstName-lastName>` Branch into master (student's Repository). **Please don't merge your own pull request**
 - [x] Add your project manager as a reviewer on the pull-request
-- [ ] Your project manager will count the project as complete by merging the branch back into master.
+- [x] Your project manager will count the project as complete by merging the branch back into master.
 
 ## Minimum Viable Product
 
@@ -54,7 +54,7 @@ When the client makes a `GET` request to `/api/zoos/:id`, find and return the _z
 
 When the client makes a `DELETE` request to this endpoint, the _zoo_ that has the provided `id` should be removed from the database.
 
-### PUT /api/zoos/:id[]
+### PUT /api/zoos/:id[x]
 
 When the client makes a `PUT` request to this endpoint passing an object with the changes, the _zoo_ with the provided `id` should be updated with the new information.
 
