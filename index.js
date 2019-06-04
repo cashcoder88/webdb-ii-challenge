@@ -4,18 +4,18 @@ const zoos = require('./zoos-model.js')
 const server = express();
 
 
-// const knex = require('knex')
+const knex = require('knex')
 
 
-// const knexConfig = {
-//     client: 'sqlite3',
-//     connection: {
-//         filename: './data/lambda.db3'
-//     },
-//     useNullAsDefault: true
-// }
+const knexConfig = {
+    client: 'sqlite3',
+    connection: {
+        filename: './data/lambda.db3'
+    },
+    useNullAsDefault: true
+}
 
-// const db = knex(knexConfig);
+const db = knex(knexConfig);
 
 server.use(express.json());
 server.use(helmet());
@@ -75,6 +75,23 @@ server.delete('/api/zoos/:id', (req, res) => {
   .catch(error => {
     res.status(500).json(error)
   })
+});
+
+
+server.put('/api/zoos/:id', (req, res) => {
+  const id = req.params.id
+  const changes = req.body
+  zoos.update(id, changes)
+    .then(count => {
+      if (count > 0) {
+        res.status(200).json({message: `${count} record(s) changed`})
+      } else {
+        res.status(404).json( {message: 'animal not found'})
+      }
+    })
+    .catch(error => {
+      res.status(500).json(error)
+    })
 });
 
 //------------------------------------------------

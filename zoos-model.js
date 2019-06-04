@@ -37,7 +37,9 @@ function add(body) {
 }
   
   function update(id, changes) {
-    return null;
+    return db('zoos')
+    .where({ id} )
+    .update(changes)
   }
   
   function remove(id) {
