@@ -6,17 +6,17 @@ In this challenge, you will write an API that can be used to manage _Zoos_ store
 
 Follow these steps for starting your project.
 
-- [ ] Fork this repository and **clone your fork**.
-- [ ] Add your project manager as collaborator on your fork.
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+- [x] Fork this repository and **clone your fork**.
+- [x] Add your project manager as collaborator on your fork.
+- [x] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [x] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+- [x] Push commits: git push origin `<firstName-lastName>`.
 
 Follow these steps for completing your project.
 
-- [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into master (student's Repository). **Please don't merge your own pull request**
-- [ ] Add your project manager as a reviewer on the pull-request
-- [ ] Your project manager will count the project as complete by merging the branch back into master.
+- [x] Submit a Pull-Request to merge `<firstName-lastName>` Branch into master (student's Repository). **Please don't merge your own pull request**
+- [x] Add your project manager as a reviewer on the pull-request
+- [x] Your project manager will count the project as complete by merging the branch back into master.
 
 ## Minimum Viable Product
 
@@ -34,7 +34,7 @@ The included database has a _zoos_ table with the following schema:
 | id     | integer   | primary key, auto-increments |
 | name   | text      | required, unique             |
 
-### `POST /api/zoos`
+### `POST /api/zoos`[x]
 
 When the client makes a `POST` request to this endpoint, a new _zoo_ should be created in the _zoos_ table.
 
@@ -42,22 +42,22 @@ Ensure the client passes a `name` property in the request body. If there's an er
 
 Return the inserted zoo and a 201 status code.
 
-### `GET /api/zoos`
+### `GET /api/zoos`[x]
 
 When the client makes a `GET` request to this endpoint, return a list of all the _zoos_ in the database. Remember to handle any errors and return the correct status code.
 
-### `GET /api/zoos/:id`
+### `GET /api/zoos/:id`[x]
 
 When the client makes a `GET` request to `/api/zoos/:id`, find and return the _zoo_ associated with the given `id` or an HTTP status code `404` and a helpful message if no zoo with that `id` exists. Remember to handle errors and send the correct status code.
 
-### DELETE /api/zoos/:id
+### DELETE /api/zoos/:id[x]
 
 When the client makes a `DELETE` request to this endpoint, the _zoo_ that has the provided `id` should be removed from the database.
 
-### PUT /api/zoos/:id
+### PUT /api/zoos/:id[x]
 
 When the client makes a `PUT` request to this endpoint passing an object with the changes, the _zoo_ with the provided `id` should be updated with the new information.
 
 ## Stretch Problem
 
-Add a new _bears_ table to the database and add endpoints to perform CRUD operations on it. Each bear should have an `id` and `name` property similar to the _zoos_ table.
+Add a new _bears_ table to the database [x] and add endpoints to perform CRUD operations on it. Each bear should have an `id` and `name` property similar to the _zoos_ table.
